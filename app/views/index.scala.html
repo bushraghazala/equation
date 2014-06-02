@@ -1,0 +1,39 @@
+@(equF: Form[Equation],e:Equation)
+ 
+@import helper._
+
+@main("calculate equation") {
+ <center>   
+    <h1>My simple application for caculating equation of the form</h1>
+    <h2>ax^2 + bx + c = 0 </h2></center>
+    <h4>Please enter 0 to unknown input</h4>
+    
+       @form(routes.Application.calculate) {
+        
+@inputText(equF("a")) 
+@inputText(equF("b")) 
+@inputText(equF("c")) 
+        
+        <input type="submit" value="Calculate">
+
+
+        
+    }
+@if(e.d>0){
+<font color="blue">
+<h1>There is 2 solutions</h1></font> 
+<h1>x1= @e.sol1</h1>
+<h1>x2= @e.sol2</h1>
+}
+@if(e.d==0){
+<font color="blue">
+<h1>There is one solution</h1></font>
+<h1>@e.sol1</h1>
+}
+@if(e.d<0){
+<font color="red"> 
+<h1>no solution !!! </h1>
+</font> 
+}
+<center><h2>eng.bushra ghazala</h2></center> 
+}

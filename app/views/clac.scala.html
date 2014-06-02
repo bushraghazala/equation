@@ -1,0 +1,16 @@
+@(equF: Form[Equation])
+
+ @import helper._
+    
+    <h1>My simple application for caculating equation</h1>
+    <h2>ax^2 + bx + c = 0 </h2>
+        <h4>Please enter 0 to unknown input</h4>
+
+@form(routes.Application.calculate) {
+        
+        @inputText(equF("a")) 
+  @inputText(equF("b")) 
+ @inputText(equF("c")) 
+        
+        <input type="submit" value="Calculate">
+}
